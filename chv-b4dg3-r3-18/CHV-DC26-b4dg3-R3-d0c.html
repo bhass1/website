@@ -37,7 +37,16 @@ I noticed it uses one of NXP's S32K series MCUs. That's great because I am using
 <img src="assets/badge_mcu_markup.jpg" width="500"/> <br/>
 <br/>
 <b>[2:04pm]:</b> The pictures are uploaded and marked. I will come back with a table of each component with links to the supplier's website. <br/>
-
+<br/>
+<b>[2:16pm]:</b> Hahahahaha. This is great! 12 hours later and I find that <a href="http://www.specsolns.com/dc2018-can.html"> I need to hack the badge before CAN will even work in the first place!!</a> Well played, DEFCON CHV badge people; Well played. <br/>
+Let's see, we need a hardware change and a software change. I can't believe the author even listed "Option 3 - No CAN needed." Really? You're going to suggest we don't use CAN in automotive applications?? That's golden.<br/>
+<br/>
+<b>[2:57pm]:</b> After a short break, I went into researching JTAG devices so I can flash the provided hex to the S32 and get CAN working. Looks like I have a few options: <br/>
+1. Segger J-Link EDU: <a href="https://www.mouser.com/ProductDetail/Segger-Microcontroller/J-Link-EDU?qs=sGAEpiMZZMvu8NZDyZ4K0dwf6o9Xeg1V"> Mouser URL ($60.00) </a><br/>
+2. P&E Micro Multilink Universal: <a href="http://www.pemicro.com/products/product_viewDetails.cfm?product_id=15320168&productTab=5"> PE Micro URL ($199.00)</a><br/>
+3. Bus Pirate + OpenOCD: <a href="https://www.adafruit.com/product/237"> Adafruite URL ($30.00) </a><br/>
+<br/>
+The Bus Pirate option has <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/">a promising looking guide online </a> and feels good on the wallet. Plus I can do a bunch of things like I2C and SPI with it. I have used it in the past for writing <a href="https://github.com/Heavy-Vehicle-Networking-At-U-Tulsa/cthwre">a hardware reverse engineering course</a> for the <a href="http://www.cybertruckchallenge.org/">1st Annual CyberTruck Challenge</a>, but I remember it being a pretty big pain in the neck.
 </p>
 
 
