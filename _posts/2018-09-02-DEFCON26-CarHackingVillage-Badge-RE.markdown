@@ -27,7 +27,7 @@ Just this past August, Lear sent me to DEFCON26. I definitely recommend it for a
 To enter, you purchase the main DEFCON badge. That's all you need, but you can also purchase badges some (all?) of the villages there. For those not "in the know," a "village" is just an area of the CON that focuses on a topic. Naturally, I purchased a badge from the [Car Hacking Village][chv-web]. 
 
 
-I am will be writing a resource guide based on my experiences reverse engineering the CHV badge.
+I will be writing a resource guide based on my experiences reverse engineering the CHV badge.
 [DEFCON26 CarHackingVillage (CHV) Badge Reverse Engineering (RE) Guide][chvre-web]
 
 
