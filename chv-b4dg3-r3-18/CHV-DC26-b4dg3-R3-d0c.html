@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Genetic Search Image Approximation Algorithm</title>
+</head>
+<body>
+<p>
+EECS 492 Artificial Intelligence<br>
+Assignment 1 Results<br>
+Bill Hass<br>
+September 29, 2015<br>
+</p>
+<h2>Assignment 1 Results</h2>
+<p>
+Stuff.
+</p>
+<!-- <table border=1>
+<tr>
+    <th>Original Image</th>
+    <th>Approximation</th>
+    <th>Learning Curve</th>
+    <th>3D Parameter Graph</th>
+</tr>
+<tr>
+    <td>
+        75&times;75 pixels<br>
+        <img src="assets/images/im_mage.jpg"><br>
+        <br><br>
+    </td>
+    <td>
+        <img src="assets/approx/im_mage-0.png"><br>
+        P=100 N=8 K=2<br>
+        <img src="assets/APNGs/bestMage_500000.png"><br>E=500,000<br>Fmax=1.44365<br>
+        <img src="assets/approx/im_mage-final.png">
+    </td>
+    <td>
+        <img src="assets/charts/fitness_curve_mage.png">
+    </td>
+    <td>
+        <img width=400 height=400 src="assets/charts/3d_surface_mage.jpg"><br>
+        For E=25,000, N=8 & K=2 gave the best fitness, F=1.09601
+    </td>
+</tr>
+<tr>
+    <td>
+        96&times;96 pixels<br>
+        <img src="assets/images/im_darwin.jpg"><br>
+        <br><br>
+    </td>
+    <td>
+        <img src="assets/approx/im_darwin-0.png"><br>
+        P=100, N=1, K=2<br>
+        <img src="assets/APNGs/bestDarwin_500000.png"><br>
+        E=500,000<br>
+        Fmax=1.22866<br>
+        <img src="assets/approx/im_darwin-final.png">
+    </td>
+    <td>
+        <img src="assets/charts/fitness_curve_darwin.png">
+    </td>
+    <td>
+        <img width=400 height=400 src="assets/charts/3d_surface_darwin.jpg"><br>
+        For E=25,000, N=1 & K=2 gave the best fitness, F=0.96739
+    </td>
+</tr>
+<tr>
+    <td>
+        128&times;128 pixels<br>
+        <img src="assets/images/im_mona_lisa.jpg"><br>
+        <br><br>
+    </td>
+    <td>
+        <img src="assets/approx/im_mona_lisa-0.png"><br>
+        P=100, N=1, K=2<br>
+        <img src="assets/APNGs/bestMona_500000.png"><br>
+        E=500,000<br>
+        Fmax=1.23490<br>
+        <img src="assets/approx/im_mona_lisa-final.png">
+    </td>
+    <td>
+        <img src="assets/charts/fitness_curve_mona_lisa.png">
+    </td>
+    <td>
+        <img width=400 height=400 src="assets/charts/3d_surface_mona_lisa.jpg"><br>
+        For E=25,000, N=1 & K=2 gave the best fitness, F=0.99675
+    </td>
+</tr>
+<tr>
+    <td>
+        150&times;150 pixels<br>
+        <img src="assets/images/im_me.png"><br>
+        <br><br>
+    </td>
+    <td>
+        <img src="assets/approx/im_me-0.png"><br>
+        P=100, N=1, K=2<br>
+        <img src="assets/APNGs/bestMe_500000.png"><br>
+        E=500,000<br>
+        Fmax=1.15011<br>
+        <img src="assets/approx/im_me-final.png">
+    </td>
+    <td>
+        <img src="assets/charts/fitness_curve_me.png">
+    </td>
+    <td>
+        <img width=400 height=400 src="assets/charts/3d_surface_me.jpg"><br>
+        For E=25,000, N=1 & K=2 gave the best fitness, F=0.93654
+    </td>
+</tr>
+<tr>
+    <td>
+        256&times;256 pixels<br>
+        <img src="assets/images/im_majoras.jpg"><br>
+        <br><br>
+    </td>
+    <td>
+        <img src="assets/approx/im_majoras-0.png"><br>
+        P=100, N=1, K=8<br>
+        <img src="assets/APNGs/bestMajoras_500000.png"><br>
+        E=500,000<br>
+        Fmax=0.76837<br>
+        <img src="assets/approx/im_majoras-final.png">
+    </td>
+    <td>
+        <img src="assets/charts/fitness_curve_majoras.png">
+    </td>
+    <td>
+        <img width=400 height=400 src="assets/charts/3d_surface_majoras.jpg"><br>
+        For E=25,000, N=1 & K=8 gave the best fitness, F=0.61368
+    </td>
+</tr>
+</table>
+<br>
+<hr>
+<p>
+Generally, if we take the mean average fitness of all 5 images parameterized by N and K up to 25,000 effort, we can see that the best overall value for (N,K) is (1, 1) with avg fitness 0.9171.<br>
+<center><img width=400 height=400 src="assets/charts/3d_surface_combined_avg.jpg"></center><br>
+</p>
+<hr>
+<p>
+Mutations used:
+<ul><li>10% chance to mutate <i>color</i> and <i>shape</i> of up to 10% of all polygons in genome.</li>
+<li>10% chance to replace a polygon in the genome with a random triangle.</li>
+<li>20% chance to swap the order of two polygons which are in adjacent in the genome.</li>
+<li>20% chance to mutate an existing polygon's <i>color</i> and <i>shape</i>.</li>
+<li>20% chance to mutate an existing polygon's <i>color</i>. </li>
+<li>20% chance to mutate an existing polygon's <i>shape</i>. </li>
+</ul>
+
+<i>Shape Mutation:</i>
+<ul><li>With 1/3 probability, remove a vertex.</li>
+<li>With 1/3 probability, add a vertex close to an edge.</li>
+        - If the slope of the edge wass undefined, the y component was chosen at the midpoint, and the x component was chosen with a Gaussian distribution w/ mean midpoint_x and stdev of 10% of total length of the edge. <br>
+        - If the slope of the edge was 0, the x component was chosen at the midpoint, and the y component was chosen with a Gaussian distribution w/ mean midpoint_y and stdev of 10% total length of the edge.<br>
+        - Otherwise, the x component was chosen uniformly between x_min and x_max of the edge while the y component was chosen uniformly between y_min and y_max of the edge.
+<li>With 1/3 probability, move a vertex slightly.</li>
+        - A Gaussian distribution w/ mean 0 and stdev 5 pixels was added to the x component and y component of the vertex.
+</ul>
+
+<i>Color Mutation:</i>
+<ul><li>Mutate each of the polygon's R,G,B,A values:</li>
+<ul><li>With 1/2 probability add 'val' chosen with uniform distribution in set {0, 5, 10, 20, 30}</li>
+<li>With 1/2 probability subtract 'val' chosen with uniform distribution in set {0, 5, 10, 20, 30}</li>
+</ul></ul>
+
+<p>
+Random triangles were created by picking a point on the image with uniform distribution, 
+then adding a Gaussian distribution of mean 0 and stdev 20% of the image width to 
+the initial point's x coordinate and adding a Gaussian distribution of mean 0 and stdev 20% 
+image height to the initial point's y coordinate to obtain the second and third vertices.
+Random colors were picked using uniform distribution over the RGB color space.
+</p>
+<p>
+Parents were selected from an array of individuals sorted in decreasing order of fitness. The first parent was chosen
+using the index <code>abs(random.gauss(0, 0.1*N))</code>. Then, the first parent was removed from possible parent choices,
+and the second parent was chosen using <code>abs(random.gauss(0, 0.1*N))</code>. This made the more fit individuals
+more likely to be chosen for crossover. Once the individuals were chosen, the number of polygons to take from the first parent was
+chosen uniformly using <code>random.randint(0, P).</code> 
+</p>
+-->
+</body>
+</html>
