@@ -8,7 +8,7 @@ Hello World.
 
 Long time since my last update. Life has a way of making you choose to spend your time on things you love because you don't have much of it. Indeed I love RE, but not blogging. Alas, here I am. Why not? 
 
-I wrote a basic CAN fuzzer in Python back around May 2016 while in grad school. [Here it is: PyFuzz_CAN.][pyfuzz-git] I needed a quick and easy way to fuzz the network of a commercial class-8 tractor (aka. the front part of a semi-truck) for [a paper I later published][woot-trucks] with two classmates (Leif and Liza) and advisor [(André)][andre-web]. The tool needs some attention for sure, but I'll get to that some other day.
+I wrote a basic CAN fuzzer in Python back around May 2016 while in grad school. [Here it is: PyFuzz_CAN.][pyfuzz-git] I needed a quick and easy way to fuzz the network of a commercial class-8 tractor (aka. the front part of a semi-truck) for [a paper I later published][woot-trucks] with two classmates (Leif and Liza) and advisor [(Andre)][andre-web]. The tool needs some attention for sure, but I'll get to that some other day.
 
 
 Since then, a lot has happened. I now work at [Lear Corporation][lear-web] in the product cybersecurity group doing a ton of different things. Everything is cyber. 
