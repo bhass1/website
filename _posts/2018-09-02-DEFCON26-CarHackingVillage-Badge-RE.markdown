@@ -36,4 +36,4 @@ I will be writing a resource guide based on my experiences reverse engineering t
 [lear-web]:    http://lmgtfy.com/?q=Lear+Corporation
 [andre-web]:   http://weimerskirch.org/
 [chv-web]:     https://www.carhackingvillage.com/
-[chvre-web]:   https://billhass.me/chv-badge-re-18/CHV-DC26-b4dg3-R3-d0c.html
+[chvre-web]:   https://billhass.me/chv-b4dg3-r3-18/CHV-DC26-b4dg3-R3-d0c.html
