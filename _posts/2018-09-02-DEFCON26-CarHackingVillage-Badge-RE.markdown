@@ -16,6 +16,9 @@ I wrote a basic CAN fuzzer in Python back around May 2016 while in grad school. 
 
 Since then, a lot has happened. I now work at [Lear Corporation][lear-web] in the product cybersecurity group doing a ton of different things. Everything is cyber. 
 
+<div style="display: block; margin-left: auto; margin-right: auto; width: 300px">
+<img src="/res/img/cyber.png" alt="cyber cyber cyber" style="width: 100%; height: auto"/>
+</div>
 
 But lets just let the "cyber" be assumed in the following: Embedded security, security analysis & design, pen testing, and software development. 
 
@@ -25,11 +28,10 @@ It has been a blast!
 
 Just this past August, Lear sent me to DEFCON26. I definitely recommend it for anyone who is into hacking/security/the cyber/gambling/desert heat. For those not "in the know," a "badge" means at least two things when talking about a "badge" from DEFCON: 
 
-1) How you get into the CON without getting kicked out by GOONS; 
+1. How you get into the CON without getting kicked out by GOONS; 
+2. Electronic device meant for reverse engineering and "hacking." 
 
-2) Electronic device meant for reverse engineering and "hacking." 
-
-To enter, you purchase the main DEFCON badge. That's all you need, but you can also purchase badges some (all?) of the villages there. For those not "in the know," a "village" is just an area of the CON that focuses on a topic. Naturally, I purchased a badge from the [Car Hacking Village][chv-web]. 
+To enter, you purchase the main DEFCON badge. That's all you need, but you can also purchase badges from some (all?) of the villages there. For those not "in the know," a "village" is just an area of the CON that focuses on a topic. Naturally, I purchased a badge from the [Car Hacking Village][chv-web]. 
 
 
 I will be writing a resource guide based on my experiences reverse engineering the CHV badge.
