@@ -49,170 +49,85 @@ Let's see, we need a hardware change and a software change. I can't believe the 
 The Bus Pirate option has <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/">a promising looking guide online </a> and feels good on the wallet. Plus I can do a bunch of things like I2C and SPI with it. I have used it in the past for writing <a href="https://github.com/Heavy-Vehicle-Networking-At-U-Tulsa/cthwre">a hardware reverse engineering course</a> for the <a href="http://www.cybertruckchallenge.org/">1st Annual CyberTruck Challenge</a>, but I remember it being a pretty big pain in the neck.
 </p>
 
-
-<!-- <table border=1>
-<tr>
-    <th>Original Image</th>
-    <th>Approximation</th>
-    <th>Learning Curve</th>
-    <th>3D Parameter Graph</th>
-</tr>
-<tr>
-    <td>
-        75&times;75 pixels<br>
-        <img src="assets/images/im_mage.jpg"><br>
-        <br><br>
-    </td>
-    <td>
-        <img src="assets/approx/im_mage-0.png"><br>
-        P=100 N=8 K=2<br>
-        <img src="assets/APNGs/bestMage_500000.png"><br>E=500,000<br>Fmax=1.44365<br>
-        <img src="assets/approx/im_mage-final.png">
-    </td>
-    <td>
-        <img src="assets/charts/fitness_curve_mage.png">
-    </td>
-    <td>
-        <img width=400 height=400 src="assets/charts/3d_surface_mage.jpg"><br>
-        For E=25,000, N=8 & K=2 gave the best fitness, F=1.09601
-    </td>
-</tr>
-<tr>
-    <td>
-        96&times;96 pixels<br>
-        <img src="assets/images/im_darwin.jpg"><br>
-        <br><br>
-    </td>
-    <td>
-        <img src="assets/approx/im_darwin-0.png"><br>
-        P=100, N=1, K=2<br>
-        <img src="assets/APNGs/bestDarwin_500000.png"><br>
-        E=500,000<br>
-        Fmax=1.22866<br>
-        <img src="assets/approx/im_darwin-final.png">
-    </td>
-    <td>
-        <img src="assets/charts/fitness_curve_darwin.png">
-    </td>
-    <td>
-        <img width=400 height=400 src="assets/charts/3d_surface_darwin.jpg"><br>
-        For E=25,000, N=1 & K=2 gave the best fitness, F=0.96739
-    </td>
-</tr>
-<tr>
-    <td>
-        128&times;128 pixels<br>
-        <img src="assets/images/im_mona_lisa.jpg"><br>
-        <br><br>
-    </td>
-    <td>
-        <img src="assets/approx/im_mona_lisa-0.png"><br>
-        P=100, N=1, K=2<br>
-        <img src="assets/APNGs/bestMona_500000.png"><br>
-        E=500,000<br>
-        Fmax=1.23490<br>
-        <img src="assets/approx/im_mona_lisa-final.png">
-    </td>
-    <td>
-        <img src="assets/charts/fitness_curve_mona_lisa.png">
-    </td>
-    <td>
-        <img width=400 height=400 src="assets/charts/3d_surface_mona_lisa.jpg"><br>
-        For E=25,000, N=1 & K=2 gave the best fitness, F=0.99675
-    </td>
-</tr>
-<tr>
-    <td>
-        150&times;150 pixels<br>
-        <img src="assets/images/im_me.png"><br>
-        <br><br>
-    </td>
-    <td>
-        <img src="assets/approx/im_me-0.png"><br>
-        P=100, N=1, K=2<br>
-        <img src="assets/APNGs/bestMe_500000.png"><br>
-        E=500,000<br>
-        Fmax=1.15011<br>
-        <img src="assets/approx/im_me-final.png">
-    </td>
-    <td>
-        <img src="assets/charts/fitness_curve_me.png">
-    </td>
-    <td>
-        <img width=400 height=400 src="assets/charts/3d_surface_me.jpg"><br>
-        For E=25,000, N=1 & K=2 gave the best fitness, F=0.93654
-    </td>
-</tr>
-<tr>
-    <td>
-        256&times;256 pixels<br>
-        <img src="assets/images/im_majoras.jpg"><br>
-        <br><br>
-    </td>
-    <td>
-        <img src="assets/approx/im_majoras-0.png"><br>
-        P=100, N=1, K=8<br>
-        <img src="assets/APNGs/bestMajoras_500000.png"><br>
-        E=500,000<br>
-        Fmax=0.76837<br>
-        <img src="assets/approx/im_majoras-final.png">
-    </td>
-    <td>
-        <img src="assets/charts/fitness_curve_majoras.png">
-    </td>
-    <td>
-        <img width=400 height=400 src="assets/charts/3d_surface_majoras.jpg"><br>
-        For E=25,000, N=1 & K=8 gave the best fitness, F=0.61368
-    </td>
-</tr>
-</table>
-<br>
-<hr>
+<h3>Sept. 15th, 2018</h3>
 <p>
-Generally, if we take the mean average fitness of all 5 images parameterized by N and K up to 25,000 effort, we can see that the best overall value for (N,K) is (1, 1) with avg fitness 0.9171.<br>
-<center><img width=400 height=400 src="assets/charts/3d_surface_combined_avg.jpg"></center><br>
-</p>
-<hr>
-<p>
-Mutations used:
-<ul><li>10% chance to mutate <i>color</i> and <i>shape</i> of up to 10% of all polygons in genome.</li>
-<li>10% chance to replace a polygon in the genome with a random triangle.</li>
-<li>20% chance to swap the order of two polygons which are in adjacent in the genome.</li>
-<li>20% chance to mutate an existing polygon's <i>color</i> and <i>shape</i>.</li>
-<li>20% chance to mutate an existing polygon's <i>color</i>. </li>
-<li>20% chance to mutate an existing polygon's <i>shape</i>. </li>
-</ul>
+<b>[9:47pm]:</b>The hack to fix CAN on the CHV badge is two parts: (1) Hardware and (2) Software. So I did some solder work since my last post:<br/>
+1. Ground PIN 2 on all of the CAN Transceivers (NXP TJA1057). So that means three pretty small solder joints. Make sure you have a small tip! I used a 1/32" pitch cone tip. Just take your time, get solder on the tip and solder on the patch wire. I think enamled copper wire is meant for this kind of stuff, but jumper wires actually work just fine in most cases, so I went with that. <br/>
+2. Solder a 5-pin male header to the S32K JTAG port. I've had to do this type of solder joint tens of times while building my fpv quadcopters, it's a very common solder joint... This one will benefit from flux because it will help the solder flow down into the cylindrical hole of the PCB. Put a little on the tips of the header before you push it in. Use any random thing to prop the pins up so you can solder them in place. I kinda F*@keD up because I didn't use any and got some fat solder joints. <br/>
+<br/>
+It's not pretty, but it should get the job done.<br/>
+<br/>
+Time to get BusPirate configured. I have a Bus Pirate 4.0 and <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/"> will be following the link I referenced above</a>.
 
-<i>Shape Mutation:</i>
-<ul><li>With 1/3 probability, remove a vertex.</li>
-<li>With 1/3 probability, add a vertex close to an edge.</li>
-        - If the slope of the edge wass undefined, the y component was chosen at the midpoint, and the x component was chosen with a Gaussian distribution w/ mean midpoint_x and stdev of 10% of total length of the edge. <br>
-        - If the slope of the edge was 0, the x component was chosen at the midpoint, and the y component was chosen with a Gaussian distribution w/ mean midpoint_y and stdev of 10% total length of the edge.<br>
-        - Otherwise, the x component was chosen uniformly between x_min and x_max of the edge while the y component was chosen uniformly between y_min and y_max of the edge.
-<li>With 1/3 probability, move a vertex slightly.</li>
-        - A Gaussian distribution w/ mean 0 and stdev 5 pixels was added to the x component and y component of the vertex.
-</ul>
+[10:30pm]: Oh boy! According to <a href="http://dangerousprototypes.com/docs/Bus_Pirate_v4_vs_v3_comparison#Support_.26_development">the BusPirate website</a>, Bus Pirate v4.0 hardware does not support OpenOCD JTAG.... :((((( <br/>
+<br/>
+But have no fear! <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=28&t=8498">Bus Pirate Community Firmware 7.0 to the rescue??</a> Could it be?!<br/>
+<br/>
+I noticed the blog was posted back in 2016 (2 years ago) so I took a look at the bleeding edge in github. <br/>
+[insert knife picturehere] <br/>
+<br/>
+It looks like there's <a href="https://github.com/BusPirate/Bus_Pirate/issues/103">a recent issue on Github about not getting BP V4.0 and OpenOCD to work.</a><br/>
+<br/>
+Oh yeah, they whipped out the logic analyzer. They aren't messing around! This is what I like to see. <br/>
+[insert image of github post]
+AND FIXED IT!!!! <br/>
+<br/>
+[insert celebration gif]<br/>
+<br/>
+[insert github fux]<br/>
+WOOOO!!! Time to pull it down and give it a spin! There is <a href="https://github.com/BusPirate/Bus_Pirate/blob/master/Documentation/building-and-flashing-firmware.md">a guide here</a>.<br/>
+<br/>
+wget http://www.microchip.com/mplabxc16linux<br/>
+chmod +x xc16-v1.35-full-install-linux-installer.run<br/>
+sudo ./xc16-v1.35-full-install-linux-installer.run<br/>
+<br/>
+[insert image of compiler install steps]<br/>
+<br/>
+[11:20pm]: Time to get the IDE going... <br/>
+wget http://www.microchip.com/mplabx-ide-linux-installer<br/>
+tar -xvf MPLABX-v5.05-linux-installer.tar (this one takes a while, just let it work)<br/> 
+chmod +x MPLABX-v5.05-linux-installer.sh
+sudo ./MPLABX-v5.05-linux-installer.sh
 
-<i>Color Mutation:</i>
-<ul><li>Mutate each of the polygon's R,G,B,A values:</li>
-<ul><li>With 1/2 probability add 'val' chosen with uniform distribution in set {0, 5, 10, 20, 30}</li>
-<li>With 1/2 probability subtract 'val' chosen with uniform distribution in set {0, 5, 10, 20, 30}</li>
-</ul></ul>
+<br/>
+<br/>
+64 Bit, check libraries<br/>
+Check for 32 Bit libraries<br/>
+These 32 bit libraries were not found and are needed for MPLAB X to run:<br/>
+libexpat.so<br/>
+libX11.so<br/>
+libXext.so<br/>
+<br/>
+For more information visit http://microchip.wikidot.com/install:mplabx-lin64<br/>
+<br/>
+<br/>
 
-<p>
-Random triangles were created by picking a point on the image with uniform distribution, 
-then adding a Gaussian distribution of mean 0 and stdev 20% of the image width to 
-the initial point's x coordinate and adding a Gaussian distribution of mean 0 and stdev 20% 
-image height to the initial point's y coordinate to obtain the second and third vertices.
-Random colors were picked using uniform distribution over the RGB color space.
-</p>
-<p>
-Parents were selected from an array of individuals sorted in decreasing order of fitness. The first parent was chosen
-using the index <code>abs(random.gauss(0, 0.1*N))</code>. Then, the first parent was removed from possible parent choices,
-and the second parent was chosen using <code>abs(random.gauss(0, 0.1*N))</code>. This made the more fit individuals
-more likely to be chosen for crossover. Once the individuals were chosen, the number of polygons to take from the first parent was
-chosen uniformly using <code>random.randint(0, P).</code> 
-</p>
--->
-</body>
-</html>
+[insert failed install image]
+
+<br/>
+NOTE: You may need different libraries than what I list below. Follow <a href="http://microchipdeveloper.com/install:mplabx-lin64">the Microchip guide here for installing the IDE in linux</a>.<br/>
+<br/>
+sudo apt-get install libexpat1:i386 libx11-6:i386 libxext6:i386<br/>
+<br/>
+[11:36pm]: Finally I ran the IDE installer and it is actively installing...<br/>
+[insert image of installing #4]
+[11:41pm]: Argghh!! VM ran out of storage!!!!! It had a 32 GB drive..
+[insert image of failed install]
+Most of the install is located at /opt/microchip as far as I can tell by using "Disk Usage Analyzer." Just select it from the GUI's search option. So I removed the installed bits so my computer had a chance to breathe. I couldn't save this file or do much of anything without warnings and complaints that there was no disk space to do anything (e.g. tab-complete in Bash didn't work - probably because it needed to create a file-based cache and couldn't). <br/>
+<br/>
+<br/>
+sudo rm -r /opt/microchip
+<br/>
+<h3>Sept. 2, 2018</h3>
+[12:15am] As it turns out, I had a rather large buildroot with full linux and application source just hanging around, so I zipped it up and gained a surprising amount of space. It went from 8.8GB to 2.5GB - I gained 6.3GB; Cool!<br/>
+<br/>
+
+
+
+git clone https://github.com/BusPirate/Bus_Pirate.git<br/>
+
+
+
+
+
+
