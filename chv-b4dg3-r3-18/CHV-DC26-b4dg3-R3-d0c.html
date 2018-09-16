@@ -59,7 +59,7 @@ It's not pretty, but it should get the job done.<br/>
 <br/>
 Time to get BusPirate configured. I have a Bus Pirate 4.0 and <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/"> will be following the link I referenced above</a>.
 
-[10:30pm]: Oh boy! According to <a href="http://dangerousprototypes.com/docs/Bus_Pirate_v4_vs_v3_comparison#Support_.26_development">the BusPirate website</a>, Bus Pirate v4.0 hardware does not support OpenOCD JTAG.... :((((( <br/>
+<b>[10:30pm]:</b> Oh boy! According to <a href="http://dangerousprototypes.com/docs/Bus_Pirate_v4_vs_v3_comparison#Support_.26_development">the BusPirate website</a>, Bus Pirate v4.0 hardware does not support OpenOCD JTAG.... :((((( <br/>
 <br/>
 But have no fear! <a href="http://dangerousprototypes.com/forum/viewtopic.php?f=28&t=8498">Bus Pirate Community Firmware 7.0 to the rescue??</a> Could it be?!<br/>
 <br/>
@@ -77,13 +77,16 @@ AND FIXED IT!!!! <br/>
 [insert github fux]<br/>
 WOOOO!!! Time to pull it down and give it a spin! There is <a href="https://github.com/BusPirate/Bus_Pirate/blob/master/Documentation/building-and-flashing-firmware.md">a guide here</a>.<br/>
 <br/>
+git clone https://github.com/BusPirate/Bus_Pirate.git<br/>
+<br/>
+<br/>
 wget http://www.microchip.com/mplabxc16linux<br/>
 chmod +x xc16-v1.35-full-install-linux-installer.run<br/>
 sudo ./xc16-v1.35-full-install-linux-installer.run<br/>
 <br/>
 [insert image of compiler install steps]<br/>
 <br/>
-[11:20pm]: Time to get the IDE going... <br/>
+<b>[11:20pm]:</b> Time to get the IDE going... <br/>
 wget http://www.microchip.com/mplabx-ide-linux-installer<br/>
 tar -xvf MPLABX-v5.05-linux-installer.tar (this one takes a while, just let it work)<br/> 
 chmod +x MPLABX-v5.05-linux-installer.sh
@@ -109,9 +112,9 @@ NOTE: You may need different libraries than what I list below. Follow <a href="h
 <br/>
 sudo apt-get install libexpat1:i386 libx11-6:i386 libxext6:i386<br/>
 <br/>
-[11:36pm]: Finally I ran the IDE installer and it is actively installing...<br/>
+<b>[11:36pm]:</b> Finally I ran the IDE installer and it is actively installing...<br/>
 [insert image of installing #4]
-[11:41pm]: Argghh!! VM ran out of storage!!!!! It had a 32 GB drive..
+<b>[11:41pm]:</b> Argghh!! VM ran out of storage!!!!! It had a 32 GB drive..
 [insert image of failed install]
 Most of the install is located at /opt/microchip as far as I can tell by using "Disk Usage Analyzer." Just select it from the GUI's search option. So I removed the installed bits so my computer had a chance to breathe. I couldn't save this file or do much of anything without warnings and complaints that there was no disk space to do anything (e.g. tab-complete in Bash didn't work - probably because it needed to create a file-based cache and couldn't). <br/>
 <br/>
@@ -119,12 +122,41 @@ Most of the install is located at /opt/microchip as far as I can tell by using "
 sudo rm -r /opt/microchip
 <br/>
 <h3>Sept. 2, 2018</h3>
-[12:15am] As it turns out, I had a rather large buildroot with full linux and application source just hanging around, so I zipped it up and gained a surprising amount of space. It went from 8.8GB to 2.5GB - I gained 6.3GB; Cool!<br/>
+<b>[12:15am]:</b> As it turns out, I had a rather large buildroot with full linux and application source just hanging around, so I zipped it up and gained a surprising amount of space. It went from 8.8GB to 2.5GB - I gained 6.3GB; Cool!<br/>
+I ran into an error after following the build steps.
+<b>[12:41am]:</b> So it turns out that when I removed /opt/microchip, I also blew away the compiler that I installed first. SO...
+<br/>
+First, I had to re-install the XC16 compiler. Second, I configured the IDE to point at the XC16 compiler. 
+
+Finally...
+
+[insert picture of BUILD SUCCESSFUL and rageface]
+
+Now to put the Bus Pirate v4.0 into bootloader mode, I was able to simply type '$' into the serial console and hit enter. Then I closed the connection. <br/>
+<a href="https://github.com/BusPirate/Bus_Pirate/blob/master/Documentation/building-and-flashing-firmware.md">The github guide says to use the pirate-loader_lnx</a>, but I can't find it. So I need to build it. Lucky for us the source is included already, so navigate into the folder and run make.
+
+<br/><br/>
+cd ~/source/Bus_Pirate/package/BPv4-firmware
+ls
+cd pirate-loader-v4-source
+make
+./pirate-loader_lnx --dev=/dev/ttyACM0 --hex=~/source/Bus_Pirate/Firmware/busPirate.X/dist/BusPirate_v4/production/busPirate.X.production.hex
+<br/><br/>
+
+<b>[1:36am]:</b> Okay, no success.. it kept failing. Time to try in Windows...<br/>
+<br/>
+[insert agony picture]
+<br/>
+[insert windows setup]
+<br/>
+<a href="http://dangerousprototypes.com/docs/Bus_Pirate_v4_and_pirate_loader_(only_firmware_updates)">This link was helpful </a>.
+<br/>
+<br/>
+Yaaaay, it worked!<br/>
 <br/>
 
+<b>[1:43am]</b> Bed b4 2am. Hoping for JTAG connection tomorrow...
 
-
-git clone https://github.com/BusPirate/Bus_Pirate.git<br/>
 
 
 
