@@ -155,10 +155,29 @@ make
 Yaaaay, it worked!<br/>
 <br/>
 
-<b>[1:43am]</b> Bed b4 2am. Hoping for JTAG connection tomorrow...
+<b>[1:43am]:</b> Bed b4 2am. Hoping for JTAG connection tomorrow... <br/>
+<br/>
+<b>[11:05pm]:</b> Now to finally try to get JTAG going with the Bus Pirate v4.0 on the hacked CHV badge. Remembering back to last night... "Time to get BusPirate configured. I have a Bus Pirate 4.0 and <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/"> will be following the link I referenced above</a>."
 
-
-
+<br/>
+Ok great, the firmware is bleeding edge. Now to pull down OpenOCD and get it running with the Bus Pirate v4.0. <br/>
+<br/>
+[11:33pm]: Oh man, I'm blind. The CHV badge needs SWD, not JTAG. Turns out <a href="https://github.com/BusPirate/Bus_Pirate/issues/29">there's an old issue regarding native SWD support to Bus Pirate v4.0 </a>, but it still needs to be completed. Should I do it? Hmm... I will see if the bitbanging technique works first.<br/>
+<br/>
+On second thought, I don't own a logic analyzer. Without one, I'm not sure I'll be able to get a bugfree implementation with any level of confidence.<br/>
+<br/>
+<b>[11:53pm]:</b> I went ahead and followed the OpenOCD configure, compile, and install steps from <a href="https://research.kudelskisecurity.com/2014/05/01/jtag-debugging-made-easy-with-bus-pirate-and-openocd/">the Kudelski Security Research blog</a>. One change is that I needed the libusb-1.0-0-dev libs instead of the libusb-dev libs.<br/>
+<br/>
+sudo apt-get install libusb-1.0-0-dev autoconf texinfo libftdi-dev<br/>
+./bootstrap<br/>
+./configure --enable-maintainer-mode --disable-werror --enable-buspirate<br/>
+make && sudo make install<br/>
+<br/>
+<br/>
+<h3>Sept. 16, 2018</h3>
+<br/>
+<b>[12:04am]:</b> I did some Google Kung-Fu and found two useful links: <a href="http://cholla.mmto.org/stm32/pirate.html">Tom's blog, similar to mine from two years ago today (wow, what a coincidence)</a> and <a href="https://www.earth.li/~noodles/blog/2015/08/program-fst01-with-buspirate.html">Programming the FST-01 With a Bus Pirate + OpenOCD</a><br/>
+Let's look at those later. Time for bed.<br/>
 
 
 
